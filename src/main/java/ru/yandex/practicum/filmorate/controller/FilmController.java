@@ -28,17 +28,17 @@ public class FilmController {
 
     @PostMapping()
     public Film create(@Valid @RequestBody Film film) {
-        if (Validator.filmValid(film)) {
-            film.setId(++filmId);
-            films.put(film.getId(), film);
-            log.info("Был добавлен новый фильм {}", film.getName());
-        }
+        Validator.filmValid(film);
+        film.setId(++filmId);
+        films.put(film.getId(), film);
+        log.info("Был добавлен новый фильм {}", film.getName());
         return film;
     }
 
     @PutMapping()
     public Film update(@Valid @RequestBody Film film) {
-        if (Validator.filmValid(film) && films.containsKey(film.getId())) {
+        Validator.filmValid(film);
+        if (films.containsKey(film.getId())) {
             films.put(film.getId(), film);
             log.info("Фильм {} был обновлен", film.getName());
         } else {

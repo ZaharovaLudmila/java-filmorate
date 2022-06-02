@@ -26,18 +26,17 @@ public class UserController {
 
     @PostMapping()
     public User create(@Valid @RequestBody User user) {
-        if (Validator.userValid(user)) {
-            user.setId(++userId);
-            users.put(user.getId(), user);
-            log.info("Был добавлен новый пользователь {}, id {}, email {}", user.getName(), user.getId(),
-                    user.getEmail());
-        }
+        Validator.userValid(user);
+        user.setId(++userId);
+        users.put(user.getId(), user);
+        log.info("Был добавлен новый пользователь {}, id {}, email {}", user.getName(), user.getId(), user.getEmail());
         return user;
     }
 
     @PutMapping()
     public User update(@Valid @RequestBody User user) {
-        if (Validator.userValid(user) && users.containsKey(user.getId())) {
+        Validator.userValid(user);
+        if (users.containsKey(user.getId())) {
             users.put(user.getId(), user);
             log.info("Был добавлен новый пользователь {}, id {}, email {}", user.getName(), user.getId());
         } else {

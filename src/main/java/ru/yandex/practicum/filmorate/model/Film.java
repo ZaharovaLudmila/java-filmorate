@@ -6,7 +6,6 @@ import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.PastOrPresent;
 import javax.validation.constraints.Positive;
 import javax.validation.constraints.Size;
-import java.time.Duration;
 import java.time.LocalDate;
 
 @Setter
@@ -17,11 +16,10 @@ import java.time.LocalDate;
 public class Film {
     private int id;
 
-    @NonNull
     @NotBlank
     private String name;
 
-    @Size(min = 0, max = 200)
+    @Size(max = 200)
     private String description;
 
     @PastOrPresent
