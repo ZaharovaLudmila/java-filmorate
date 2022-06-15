@@ -7,7 +7,6 @@ import ru.yandex.practicum.filmorate.model.User;
 import ru.yandex.practicum.filmorate.storage.FilmStorage;
 import ru.yandex.practicum.filmorate.storage.InMemoryFilmStorage;
 
-import java.util.Collection;
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
@@ -39,12 +38,12 @@ public class FilmService {
 
     public void addLike(int filmId, User user) {
         Film film = filmStorage.getFilmByID(filmId);
-        film.addLike(user);
+        film.getLikes().add(user);
     }
 
     public void deleteLike(int filmId, User user) {
         Film film = filmStorage.getFilmByID(filmId);
-        film.deleteLike(user);
+        film.getLikes().remove(user);
     }
 
     public List<Film> getPopularFilm(int count) {

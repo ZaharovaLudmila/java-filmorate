@@ -2,9 +2,7 @@ package ru.yandex.practicum.filmorate.storage;
 
 import org.springframework.stereotype.Component;
 import ru.yandex.practicum.filmorate.exception.FilmNotFoundException;
-import ru.yandex.practicum.filmorate.exception.ValidationException;
 import ru.yandex.practicum.filmorate.model.Film;
-import ru.yandex.practicum.filmorate.service.Validator;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -34,6 +32,10 @@ public class InMemoryFilmStorage implements FilmStorage{
             throw new FilmNotFoundException("Не удалось обновить фильм, фильм с id " + film.getId() + " не найден!");
         }
         return film;
+    }
+
+    public void delete(Film film) {
+        films.remove(film.getId());
     }
 
     public Film getFilmByID(int id) {

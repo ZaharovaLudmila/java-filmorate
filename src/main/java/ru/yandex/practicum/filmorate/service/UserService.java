@@ -6,7 +6,9 @@ import ru.yandex.practicum.filmorate.model.User;
 import ru.yandex.practicum.filmorate.storage.InMemoryUserStorage;
 import ru.yandex.practicum.filmorate.storage.UserStorage;
 
+import java.util.ArrayList;
 import java.util.List;
+import java.util.Set;
 import java.util.stream.Collectors;
 
 @Service
@@ -34,26 +36,24 @@ public class UserService {
     }
 
     public void addFriend(long userId, long friendId) {
-        List<User> userList = findAll();
         User user = userStorage.getUserByID(userId);
         User friend = userStorage.getUserByID(friendId);
-        user.addFriend(friendId);
-        friend.addFriend(userId);
+        user.getFriends().add(friendId);
+        friend.getFriends().add(userId);
     }
 
     public void deleteFriend(long userId, long friendId) {
-        List<User> userList = findAll();
         User user = userStorage.getUserByID(userId);
         User friend = userStorage.getUserByID(friendId);
-        user.deleteFriend(friendId);
-        friend.deleteFriend(userId);
+        user.getFriends().remove(friendId);
+        friend.getFriends().remove(userId);
     }
 
     public List<User> commonFriends(long userId, long friendId) {
         User user = userStorage.getUserByID(userId);
         User friend = userStorage.getUserByID(friendId);
-        List<Long> userFriends = user.getFriends();
-        List<Long> friendFriends = friend.getFriends();
+        ArrayList<Long> userFriends = new ArrayList<>(user.getFriends());
+        ArrayList<Long> friendFriends = new ArrayList<>(friend.getFriends());
         userFriends.retainAll(friendFriends);
         return userFriends.stream().map(id -> userStorage.getUserByID(id)).collect(Collectors.toList());
     }
@@ -63,7 +63,7 @@ public class UserService {
     }
 
     public List<User> getUserFriends(long userId) {
-        List<Long> friendsList = userStorage.getUserByID(userId).getFriends();
+        List<Long> friendsList = new ArrayList<>(userStorage.getUserByID(userId).getFriends());
         return friendsList.stream().map(id -> userStorage.getUserByID(id)).collect(Collectors.toList());
     }
 }
