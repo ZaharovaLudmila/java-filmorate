@@ -7,6 +7,10 @@ import javax.validation.constraints.PastOrPresent;
 import javax.validation.constraints.Positive;
 import javax.validation.constraints.Size;
 import java.time.LocalDate;
+import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Set;
 
 @Setter
 @Getter
@@ -27,4 +31,5 @@ public class Film {
 
     @Positive
     private long duration;
+    private Set<User> likes = new HashSet<>();
 }

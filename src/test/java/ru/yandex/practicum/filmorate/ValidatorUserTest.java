@@ -5,6 +5,9 @@ import org.junit.jupiter.api.Test;
 import ru.yandex.practicum.filmorate.controller.UserController;
 import ru.yandex.practicum.filmorate.exception.ValidationException;
 import ru.yandex.practicum.filmorate.model.User;
+import ru.yandex.practicum.filmorate.service.UserService;
+import ru.yandex.practicum.filmorate.storage.InMemoryUserStorage;
+
 import java.time.LocalDate;
 import java.time.Month;
 
@@ -18,7 +21,7 @@ public class ValidatorUserTest {
 
     @BeforeEach
     public void createUserController() {
-        userController = new UserController();
+        userController = new UserController(new UserService(new InMemoryUserStorage()));
         user = new User();
         user.setId(1);
         user.setEmail("test@user.ru");
