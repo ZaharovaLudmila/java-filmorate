@@ -24,9 +24,10 @@ public class ValidatorFilmTest {
 
     FilmController filmController;
     Film film;
-    @Autowired
+
     private final JdbcTemplate jdbcTemplate;
 
+    @Autowired
     public ValidatorFilmTest(JdbcTemplate jdbcTemplate) {
         this.jdbcTemplate = jdbcTemplate;
     }
