@@ -16,9 +16,14 @@ WHERE us.id = ?искомый_ID
 
 #### Запрос на получение общих друзей:
 
-SELECT fr1.friend_id <br/>
+SELECT u.user_id, <br/>
+       u.email, <br/>
+       u.login, <br/>
+       u.name, <br/>
+       u.birthday, <br/>
 FROM friends AS fr1 <br/>
 INNER JOIN friends AS fr2 ON fr1.friend_id = fr2.friend_id <br/>
+LEFT OUTER JOIN users u on fr1.friend_id = u.user_id
 WHERE fr1.user_id = ?искомый_ID1 AND fr2.user_id = ?искомый_ID2 <br/> 
         AND fr1.confirmed IS TRUE AND fr2.confirmed IS TRUE
 
@@ -41,11 +46,10 @@ SELECT<br/>
     f.description AS description, <br/>
     f.releaseDate AS releaseDate, <br/>
     f.duration AS duration, <br/>
-    mpa.name AS MPA, <br/>
+    f.MPA_id AS MPA_id, <br/>
     COUNT(DISTINCT l.user_id) <br/>
 FROM likes AS l <br/>
 LEFT OUTER JOIN films AS f ON l.film_id = f.id <br/>
-LEFT OUTER JOIN motion_picture_associations AS mpa ON l.film_id = mpa.id <br/>
 GROUP BY l.film_id <br/>
 ORDER BY COUNT(l.user_id) DESC <br/>
 LIMIT ?количество, выводимое на экран

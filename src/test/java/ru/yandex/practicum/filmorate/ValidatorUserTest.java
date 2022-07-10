@@ -2,10 +2,12 @@ package ru.yandex.practicum.filmorate;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.springframework.jdbc.core.JdbcTemplate;
 import ru.yandex.practicum.filmorate.controller.UserController;
 import ru.yandex.practicum.filmorate.exception.ValidationException;
 import ru.yandex.practicum.filmorate.model.User;
 import ru.yandex.practicum.filmorate.service.UserService;
+import ru.yandex.practicum.filmorate.storage.FriendsDao;
 import ru.yandex.practicum.filmorate.storage.InMemoryUserStorage;
 
 import java.time.LocalDate;
@@ -18,10 +20,15 @@ public class ValidatorUserTest {
 
     UserController userController;
     User user;
+    private final JdbcTemplate jdbcTemplate;
+
+    public ValidatorUserTest(JdbcTemplate jdbcTemplate) {
+        this.jdbcTemplate = jdbcTemplate;
+    }
 
     @BeforeEach
     public void createUserController() {
-        userController = new UserController(new UserService(new InMemoryUserStorage()));
+        userController = new UserController(new UserService(new InMemoryUserStorage(), new FriendsDao(jdbcTemplate)));
         user = new User();
         user.setId(1);
         user.setEmail("test@user.ru");

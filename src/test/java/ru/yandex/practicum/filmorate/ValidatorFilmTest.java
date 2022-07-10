@@ -2,13 +2,17 @@ package ru.yandex.practicum.filmorate;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.jdbc.core.JdbcTemplate;
 import ru.yandex.practicum.filmorate.controller.FilmController;
 import ru.yandex.practicum.filmorate.exception.ValidationException;
 import ru.yandex.practicum.filmorate.model.Film;
 import ru.yandex.practicum.filmorate.service.FilmService;
 import ru.yandex.practicum.filmorate.service.UserService;
+import ru.yandex.practicum.filmorate.storage.FriendsDao;
 import ru.yandex.practicum.filmorate.storage.InMemoryFilmStorage;
 import ru.yandex.practicum.filmorate.storage.InMemoryUserStorage;
+import ru.yandex.practicum.filmorate.storage.LikesDao;
 
 import java.time.LocalDate;
 import java.time.Month;
@@ -20,11 +24,17 @@ public class ValidatorFilmTest {
 
     FilmController filmController;
     Film film;
+    @Autowired
+    private final JdbcTemplate jdbcTemplate;
+
+    public ValidatorFilmTest(JdbcTemplate jdbcTemplate) {
+        this.jdbcTemplate = jdbcTemplate;
+    }
 
     @BeforeEach
     public void createFilmController() {
-        filmController = new FilmController(new FilmService(new InMemoryFilmStorage()),
-                new UserService(new InMemoryUserStorage()));
+        filmController = new FilmController(new FilmService(new InMemoryFilmStorage(), new LikesDao(jdbcTemplate)),
+                new UserService(new InMemoryUserStorage(), new FriendsDao(jdbcTemplate)));
         //film = new Film("Назад в будущее");
         film = new Film();
         film.setName("Назад в будущее");
