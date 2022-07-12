@@ -1,8 +1,4 @@
-package ru.yandex.practicum.filmorate.storage.intrf;
-
-import ru.yandex.practicum.filmorate.model.Film;
-
-import java.util.List;
+package ru.yandex.practicum.filmorate.dao.daoInterface;
 
 public interface LikesStorage {
 

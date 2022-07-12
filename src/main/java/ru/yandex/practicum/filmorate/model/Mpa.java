@@ -4,12 +4,10 @@ import lombok.*;
 
 import javax.validation.constraints.Size;
 
-@Setter
-@Getter
-@EqualsAndHashCode
+@Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class MPA {
+public class Mpa {
 
     private int id;
     @Size(max = 50)

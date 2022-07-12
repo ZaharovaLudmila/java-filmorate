@@ -1,4 +1,4 @@
-package ru.yandex.practicum.filmorate.storage.intrf;
+package ru.yandex.practicum.filmorate.dao.daoInterface;
 
 import ru.yandex.practicum.filmorate.model.User;
 import java.util.List;

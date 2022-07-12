@@ -101,7 +101,7 @@ select FRIEND_ID, CONFIRMED from FRIENDS where USER_ID = ? [90012-214]
 	at org.springframework.jdbc.core.JdbcTemplate.execute(JdbcTemplate.java:381)
 	at org.springframework.jdbc.core.JdbcTemplate.query(JdbcTemplate.java:465)
 	at org.springframework.jdbc.core.JdbcTemplate.query(JdbcTemplate.java:475)
-	at ru.yandex.practicum.filmorate.storage.UserDbStorage.getUserFriends(UserDbStorage.java:91)
+	at ru.yandex.practicum.filmorate.dao.UserDbStorage.getUserFriends(UserDbStorage.java:91)
 	at ru.yandex.practicum.filmorate.service.UserService.getUserFriends(UserService.java:59)
 	at ru.yandex.practicum.filmorate.controller.UserController.findUserFriends(UserController.java:66)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
@@ -173,7 +173,7 @@ select FRIEND_ID, CONFIRMED from FRIENDS where USER_ID = ? [90012-214]
 	at org.springframework.jdbc.core.JdbcTemplate.execute(JdbcTemplate.java:381)
 	at org.springframework.jdbc.core.JdbcTemplate.query(JdbcTemplate.java:465)
 	at org.springframework.jdbc.core.JdbcTemplate.query(JdbcTemplate.java:475)
-	at ru.yandex.practicum.filmorate.storage.UserDbStorage.getUserFriends(UserDbStorage.java:91)
+	at ru.yandex.practicum.filmorate.dao.UserDbStorage.getUserFriends(UserDbStorage.java:91)
 	at ru.yandex.practicum.filmorate.service.UserService.getUserFriends(UserService.java:59)
 	at ru.yandex.practicum.filmorate.controller.UserController.findUserFriends(UserController.java:66)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
@@ -245,7 +245,7 @@ select FRIEND_ID, CONFIRMED from FRIENDS where USER_ID = ? [90012-214]
 	at org.springframework.jdbc.core.JdbcTemplate.execute(JdbcTemplate.java:381)
 	at org.springframework.jdbc.core.JdbcTemplate.query(JdbcTemplate.java:465)
 	at org.springframework.jdbc.core.JdbcTemplate.query(JdbcTemplate.java:475)
-	at ru.yandex.practicum.filmorate.storage.UserDbStorage.getUserFriends(UserDbStorage.java:91)
+	at ru.yandex.practicum.filmorate.dao.UserDbStorage.getUserFriends(UserDbStorage.java:91)
 	at ru.yandex.practicum.filmorate.service.UserService.getUserFriends(UserService.java:59)
 	at ru.yandex.practicum.filmorate.controller.UserController.findUserFriends(UserController.java:66)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
@@ -317,7 +317,7 @@ select FRIEND_ID, CONFIRMED from FRIENDS where USER_ID = ? [90012-214]
 	at org.springframework.jdbc.core.JdbcTemplate.execute(JdbcTemplate.java:381)
 	at org.springframework.jdbc.core.JdbcTemplate.query(JdbcTemplate.java:465)
 	at org.springframework.jdbc.core.JdbcTemplate.query(JdbcTemplate.java:475)
-	at ru.yandex.practicum.filmorate.storage.UserDbStorage.getUserFriends(UserDbStorage.java:91)
+	at ru.yandex.practicum.filmorate.dao.UserDbStorage.getUserFriends(UserDbStorage.java:91)
 	at ru.yandex.practicum.filmorate.service.UserService.getUserFriends(UserService.java:59)
 	at ru.yandex.practicum.filmorate.controller.UserController.findUserFriends(UserController.java:66)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
@@ -389,7 +389,7 @@ select FRIEND_ID, CONFIRMED from FRIENDS where USER_ID = ? [90012-214]
 	at org.springframework.jdbc.core.JdbcTemplate.execute(JdbcTemplate.java:381)
 	at org.springframework.jdbc.core.JdbcTemplate.query(JdbcTemplate.java:465)
 	at org.springframework.jdbc.core.JdbcTemplate.query(JdbcTemplate.java:475)
-	at ru.yandex.practicum.filmorate.storage.UserDbStorage.getUserFriends(UserDbStorage.java:91)
+	at ru.yandex.practicum.filmorate.dao.UserDbStorage.getUserFriends(UserDbStorage.java:91)
 	at ru.yandex.practicum.filmorate.service.UserService.getUserFriends(UserService.java:59)
 	at ru.yandex.practicum.filmorate.controller.UserController.findUserFriends(UserController.java:66)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
@@ -443,8 +443,8 @@ select FRIEND_ID, CONFIRMED from FRIENDS where USER_ID = ? [90012-214]
 	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
 	at java.base/java.lang.Thread.run(Thread.java:829)
 2022-07-08 23:20:53 jdbc[3]: exception
-org.h2.jdbc.JdbcSQLDataException: Ошибка сериализации, причина: "java.io.NotSerializableException: ru.yandex.practicum.filmorate.model.MPA"
-Serialization failed, cause: "java.io.NotSerializableException: ru.yandex.practicum.filmorate.model.MPA" [90026-214]
+org.h2.jdbc.JdbcSQLDataException: Ошибка сериализации, причина: "java.io.NotSerializableException: ru.yandex.practicum.filmorate.model.Mpa"
+Serialization failed, cause: "java.io.NotSerializableException: ru.yandex.practicum.filmorate.model.Mpa" [90026-214]
 	at org.h2.message.DbException.getJdbcSQLException(DbException.java:646)
 	at org.h2.message.DbException.getJdbcSQLException(DbException.java:477)
 	at org.h2.message.DbException.get(DbException.java:212)
@@ -463,7 +463,7 @@ Serialization failed, cause: "java.io.NotSerializableException: ru.yandex.practi
 	at org.springframework.jdbc.core.JdbcTemplate.update(JdbcTemplate.java:960)
 	at org.springframework.jdbc.core.JdbcTemplate.update(JdbcTemplate.java:1015)
 	at org.springframework.jdbc.core.JdbcTemplate.update(JdbcTemplate.java:1025)
-	at ru.yandex.practicum.filmorate.storage.FilmDbStorage.update(FilmDbStorage.java:68)
+	at ru.yandex.practicum.filmorate.dao.FilmDbStorage.update(FilmDbStorage.java:68)
 	at ru.yandex.practicum.filmorate.service.FilmService.update(FilmService.java:36)
 	at ru.yandex.practicum.filmorate.controller.FilmController.update(FilmController.java:46)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
@@ -516,14 +516,14 @@ Serialization failed, cause: "java.io.NotSerializableException: ru.yandex.practi
 	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
 	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
 	at java.base/java.lang.Thread.run(Thread.java:829)
-Caused by: java.io.NotSerializableException: ru.yandex.practicum.filmorate.model.MPA
+Caused by: java.io.NotSerializableException: ru.yandex.practicum.filmorate.model.Mpa
 	at java.base/java.io.ObjectOutputStream.writeObject0(ObjectOutputStream.java:1185)
 	at java.base/java.io.ObjectOutputStream.writeObject(ObjectOutputStream.java:349)
 	at org.h2.util.JdbcUtils.serialize(JdbcUtils.java:388)
 	... 67 more
 2022-07-08 23:20:54 jdbc[3]: exception
-org.h2.jdbc.JdbcSQLDataException: Ошибка сериализации, причина: "java.io.NotSerializableException: ru.yandex.practicum.filmorate.model.MPA"
-Serialization failed, cause: "java.io.NotSerializableException: ru.yandex.practicum.filmorate.model.MPA" [90026-214]
+org.h2.jdbc.JdbcSQLDataException: Ошибка сериализации, причина: "java.io.NotSerializableException: ru.yandex.practicum.filmorate.model.Mpa"
+Serialization failed, cause: "java.io.NotSerializableException: ru.yandex.practicum.filmorate.model.Mpa" [90026-214]
 	at org.h2.message.DbException.getJdbcSQLException(DbException.java:646)
 	at org.h2.message.DbException.getJdbcSQLException(DbException.java:477)
 	at org.h2.message.DbException.get(DbException.java:212)
@@ -542,7 +542,7 @@ Serialization failed, cause: "java.io.NotSerializableException: ru.yandex.practi
 	at org.springframework.jdbc.core.JdbcTemplate.update(JdbcTemplate.java:960)
 	at org.springframework.jdbc.core.JdbcTemplate.update(JdbcTemplate.java:1015)
 	at org.springframework.jdbc.core.JdbcTemplate.update(JdbcTemplate.java:1025)
-	at ru.yandex.practicum.filmorate.storage.FilmDbStorage.update(FilmDbStorage.java:68)
+	at ru.yandex.practicum.filmorate.dao.FilmDbStorage.update(FilmDbStorage.java:68)
 	at ru.yandex.practicum.filmorate.service.FilmService.update(FilmService.java:36)
 	at ru.yandex.practicum.filmorate.controller.FilmController.update(FilmController.java:46)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
@@ -595,7 +595,7 @@ Serialization failed, cause: "java.io.NotSerializableException: ru.yandex.practi
 	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
 	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
 	at java.base/java.lang.Thread.run(Thread.java:829)
-Caused by: java.io.NotSerializableException: ru.yandex.practicum.filmorate.model.MPA
+Caused by: java.io.NotSerializableException: ru.yandex.practicum.filmorate.model.Mpa
 	at java.base/java.io.ObjectOutputStream.writeObject0(ObjectOutputStream.java:1185)
 	at java.base/java.io.ObjectOutputStream.writeObject(ObjectOutputStream.java:349)
 	at org.h2.util.JdbcUtils.serialize(JdbcUtils.java:388)
@@ -619,7 +619,7 @@ select FRIEND_ID, CONFIRMED from FRIENDS where USER_ID = ? [90012-214]
 	at org.springframework.jdbc.core.JdbcTemplate.execute(JdbcTemplate.java:381)
 	at org.springframework.jdbc.core.JdbcTemplate.query(JdbcTemplate.java:465)
 	at org.springframework.jdbc.core.JdbcTemplate.query(JdbcTemplate.java:475)
-	at ru.yandex.practicum.filmorate.storage.UserDbStorage.getUserFriends(UserDbStorage.java:91)
+	at ru.yandex.practicum.filmorate.dao.UserDbStorage.getUserFriends(UserDbStorage.java:91)
 	at ru.yandex.practicum.filmorate.service.UserService.getUserFriends(UserService.java:59)
 	at ru.yandex.practicum.filmorate.controller.UserController.findUserFriends(UserController.java:66)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
@@ -682,8 +682,8 @@ Column "USER_ID" not found [42122-214]
 	at org.h2.jdbc.JdbcResultSet.getColumnIndex(JdbcResultSet.java:3518)
 	at org.h2.jdbc.JdbcResultSet.getLong(JdbcResultSet.java:745)
 	at com.zaxxer.hikari.pool.HikariProxyResultSet.getLong(HikariProxyResultSet.java)
-	at ru.yandex.practicum.filmorate.storage.UserDbStorage.makeUser(UserDbStorage.java:135)
-	at ru.yandex.practicum.filmorate.storage.UserDbStorage.lambda$getUserFriends$3(UserDbStorage.java:91)
+	at ru.yandex.practicum.filmorate.dao.UserDbStorage.makeUser(UserDbStorage.java:135)
+	at ru.yandex.practicum.filmorate.dao.UserDbStorage.lambda$getUserFriends$3(UserDbStorage.java:91)
 	at org.springframework.jdbc.core.RowMapperResultSetExtractor.extractData(RowMapperResultSetExtractor.java:94)
 	at org.springframework.jdbc.core.RowMapperResultSetExtractor.extractData(RowMapperResultSetExtractor.java:61)
 	at org.springframework.jdbc.core.JdbcTemplate$1.doInPreparedStatement(JdbcTemplate.java:723)
@@ -692,7 +692,7 @@ Column "USER_ID" not found [42122-214]
 	at org.springframework.jdbc.core.JdbcTemplate.query(JdbcTemplate.java:744)
 	at org.springframework.jdbc.core.JdbcTemplate.query(JdbcTemplate.java:757)
 	at org.springframework.jdbc.core.JdbcTemplate.query(JdbcTemplate.java:815)
-	at ru.yandex.practicum.filmorate.storage.UserDbStorage.getUserFriends(UserDbStorage.java:91)
+	at ru.yandex.practicum.filmorate.dao.UserDbStorage.getUserFriends(UserDbStorage.java:91)
 	at ru.yandex.practicum.filmorate.service.UserService.getUserFriends(UserService.java:59)
 	at ru.yandex.practicum.filmorate.controller.UserController.findUserFriends(UserController.java:66)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
@@ -755,8 +755,8 @@ Column "USER_ID" not found [42122-214]
 	at org.h2.jdbc.JdbcResultSet.getColumnIndex(JdbcResultSet.java:3518)
 	at org.h2.jdbc.JdbcResultSet.getLong(JdbcResultSet.java:745)
 	at com.zaxxer.hikari.pool.HikariProxyResultSet.getLong(HikariProxyResultSet.java)
-	at ru.yandex.practicum.filmorate.storage.UserDbStorage.makeUser(UserDbStorage.java:135)
-	at ru.yandex.practicum.filmorate.storage.UserDbStorage.lambda$getUserFriends$3(UserDbStorage.java:91)
+	at ru.yandex.practicum.filmorate.dao.UserDbStorage.makeUser(UserDbStorage.java:135)
+	at ru.yandex.practicum.filmorate.dao.UserDbStorage.lambda$getUserFriends$3(UserDbStorage.java:91)
 	at org.springframework.jdbc.core.RowMapperResultSetExtractor.extractData(RowMapperResultSetExtractor.java:94)
 	at org.springframework.jdbc.core.RowMapperResultSetExtractor.extractData(RowMapperResultSetExtractor.java:61)
 	at org.springframework.jdbc.core.JdbcTemplate$1.doInPreparedStatement(JdbcTemplate.java:723)
@@ -765,7 +765,7 @@ Column "USER_ID" not found [42122-214]
 	at org.springframework.jdbc.core.JdbcTemplate.query(JdbcTemplate.java:744)
 	at org.springframework.jdbc.core.JdbcTemplate.query(JdbcTemplate.java:757)
 	at org.springframework.jdbc.core.JdbcTemplate.query(JdbcTemplate.java:815)
-	at ru.yandex.practicum.filmorate.storage.UserDbStorage.getUserFriends(UserDbStorage.java:91)
+	at ru.yandex.practicum.filmorate.dao.UserDbStorage.getUserFriends(UserDbStorage.java:91)
 	at ru.yandex.practicum.filmorate.service.UserService.getUserFriends(UserService.java:59)
 	at ru.yandex.practicum.filmorate.controller.UserController.findUserFriends(UserController.java:66)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
@@ -828,8 +828,8 @@ Column "USER_ID" not found [42122-214]
 	at org.h2.jdbc.JdbcResultSet.getColumnIndex(JdbcResultSet.java:3518)
 	at org.h2.jdbc.JdbcResultSet.getLong(JdbcResultSet.java:745)
 	at com.zaxxer.hikari.pool.HikariProxyResultSet.getLong(HikariProxyResultSet.java)
-	at ru.yandex.practicum.filmorate.storage.UserDbStorage.makeUser(UserDbStorage.java:135)
-	at ru.yandex.practicum.filmorate.storage.UserDbStorage.lambda$getUserFriends$3(UserDbStorage.java:91)
+	at ru.yandex.practicum.filmorate.dao.UserDbStorage.makeUser(UserDbStorage.java:135)
+	at ru.yandex.practicum.filmorate.dao.UserDbStorage.lambda$getUserFriends$3(UserDbStorage.java:91)
 	at org.springframework.jdbc.core.RowMapperResultSetExtractor.extractData(RowMapperResultSetExtractor.java:94)
 	at org.springframework.jdbc.core.RowMapperResultSetExtractor.extractData(RowMapperResultSetExtractor.java:61)
 	at org.springframework.jdbc.core.JdbcTemplate$1.doInPreparedStatement(JdbcTemplate.java:723)
@@ -838,7 +838,7 @@ Column "USER_ID" not found [42122-214]
 	at org.springframework.jdbc.core.JdbcTemplate.query(JdbcTemplate.java:744)
 	at org.springframework.jdbc.core.JdbcTemplate.query(JdbcTemplate.java:757)
 	at org.springframework.jdbc.core.JdbcTemplate.query(JdbcTemplate.java:815)
-	at ru.yandex.practicum.filmorate.storage.UserDbStorage.getUserFriends(UserDbStorage.java:91)
+	at ru.yandex.practicum.filmorate.dao.UserDbStorage.getUserFriends(UserDbStorage.java:91)
 	at ru.yandex.practicum.filmorate.service.UserService.getUserFriends(UserService.java:59)
 	at ru.yandex.practicum.filmorate.controller.UserController.findUserFriends(UserController.java:66)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
@@ -901,8 +901,8 @@ Column "USER_ID" not found [42122-214]
 	at org.h2.jdbc.JdbcResultSet.getColumnIndex(JdbcResultSet.java:3518)
 	at org.h2.jdbc.JdbcResultSet.getLong(JdbcResultSet.java:745)
 	at com.zaxxer.hikari.pool.HikariProxyResultSet.getLong(HikariProxyResultSet.java)
-	at ru.yandex.practicum.filmorate.storage.UserDbStorage.makeUser(UserDbStorage.java:135)
-	at ru.yandex.practicum.filmorate.storage.UserDbStorage.lambda$getUserFriends$3(UserDbStorage.java:91)
+	at ru.yandex.practicum.filmorate.dao.UserDbStorage.makeUser(UserDbStorage.java:135)
+	at ru.yandex.practicum.filmorate.dao.UserDbStorage.lambda$getUserFriends$3(UserDbStorage.java:91)
 	at org.springframework.jdbc.core.RowMapperResultSetExtractor.extractData(RowMapperResultSetExtractor.java:94)
 	at org.springframework.jdbc.core.RowMapperResultSetExtractor.extractData(RowMapperResultSetExtractor.java:61)
 	at org.springframework.jdbc.core.JdbcTemplate$1.doInPreparedStatement(JdbcTemplate.java:723)
@@ -911,7 +911,7 @@ Column "USER_ID" not found [42122-214]
 	at org.springframework.jdbc.core.JdbcTemplate.query(JdbcTemplate.java:744)
 	at org.springframework.jdbc.core.JdbcTemplate.query(JdbcTemplate.java:757)
 	at org.springframework.jdbc.core.JdbcTemplate.query(JdbcTemplate.java:815)
-	at ru.yandex.practicum.filmorate.storage.UserDbStorage.getUserFriends(UserDbStorage.java:91)
+	at ru.yandex.practicum.filmorate.dao.UserDbStorage.getUserFriends(UserDbStorage.java:91)
 	at ru.yandex.practicum.filmorate.service.UserService.getUserFriends(UserService.java:59)
 	at ru.yandex.practicum.filmorate.controller.UserController.findUserFriends(UserController.java:66)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
@@ -974,8 +974,8 @@ Column "USER_ID" not found [42122-214]
 	at org.h2.jdbc.JdbcResultSet.getColumnIndex(JdbcResultSet.java:3518)
 	at org.h2.jdbc.JdbcResultSet.getLong(JdbcResultSet.java:745)
 	at com.zaxxer.hikari.pool.HikariProxyResultSet.getLong(HikariProxyResultSet.java)
-	at ru.yandex.practicum.filmorate.storage.UserDbStorage.makeUser(UserDbStorage.java:135)
-	at ru.yandex.practicum.filmorate.storage.UserDbStorage.lambda$getUserFriends$3(UserDbStorage.java:91)
+	at ru.yandex.practicum.filmorate.dao.UserDbStorage.makeUser(UserDbStorage.java:135)
+	at ru.yandex.practicum.filmorate.dao.UserDbStorage.lambda$getUserFriends$3(UserDbStorage.java:91)
 	at org.springframework.jdbc.core.RowMapperResultSetExtractor.extractData(RowMapperResultSetExtractor.java:94)
 	at org.springframework.jdbc.core.RowMapperResultSetExtractor.extractData(RowMapperResultSetExtractor.java:61)
 	at org.springframework.jdbc.core.JdbcTemplate$1.doInPreparedStatement(JdbcTemplate.java:723)
@@ -984,7 +984,7 @@ Column "USER_ID" not found [42122-214]
 	at org.springframework.jdbc.core.JdbcTemplate.query(JdbcTemplate.java:744)
 	at org.springframework.jdbc.core.JdbcTemplate.query(JdbcTemplate.java:757)
 	at org.springframework.jdbc.core.JdbcTemplate.query(JdbcTemplate.java:815)
-	at ru.yandex.practicum.filmorate.storage.UserDbStorage.getUserFriends(UserDbStorage.java:91)
+	at ru.yandex.practicum.filmorate.dao.UserDbStorage.getUserFriends(UserDbStorage.java:91)
 	at ru.yandex.practicum.filmorate.service.UserService.getUserFriends(UserService.java:59)
 	at ru.yandex.practicum.filmorate.controller.UserController.findUserFriends(UserController.java:66)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
@@ -1038,8 +1038,8 @@ Column "USER_ID" not found [42122-214]
 	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
 	at java.base/java.lang.Thread.run(Thread.java:829)
 2022-07-08 23:23:27 jdbc[3]: exception
-org.h2.jdbc.JdbcSQLDataException: Ошибка сериализации, причина: "java.io.NotSerializableException: ru.yandex.practicum.filmorate.model.MPA"
-Serialization failed, cause: "java.io.NotSerializableException: ru.yandex.practicum.filmorate.model.MPA" [90026-214]
+org.h2.jdbc.JdbcSQLDataException: Ошибка сериализации, причина: "java.io.NotSerializableException: ru.yandex.practicum.filmorate.model.Mpa"
+Serialization failed, cause: "java.io.NotSerializableException: ru.yandex.practicum.filmorate.model.Mpa" [90026-214]
 	at org.h2.message.DbException.getJdbcSQLException(DbException.java:646)
 	at org.h2.message.DbException.getJdbcSQLException(DbException.java:477)
 	at org.h2.message.DbException.get(DbException.java:212)
@@ -1058,7 +1058,7 @@ Serialization failed, cause: "java.io.NotSerializableException: ru.yandex.practi
 	at org.springframework.jdbc.core.JdbcTemplate.update(JdbcTemplate.java:960)
 	at org.springframework.jdbc.core.JdbcTemplate.update(JdbcTemplate.java:1015)
 	at org.springframework.jdbc.core.JdbcTemplate.update(JdbcTemplate.java:1025)
-	at ru.yandex.practicum.filmorate.storage.FilmDbStorage.update(FilmDbStorage.java:68)
+	at ru.yandex.practicum.filmorate.dao.FilmDbStorage.update(FilmDbStorage.java:68)
 	at ru.yandex.practicum.filmorate.service.FilmService.update(FilmService.java:36)
 	at ru.yandex.practicum.filmorate.controller.FilmController.update(FilmController.java:46)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
@@ -1111,14 +1111,14 @@ Serialization failed, cause: "java.io.NotSerializableException: ru.yandex.practi
 	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
 	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
 	at java.base/java.lang.Thread.run(Thread.java:829)
-Caused by: java.io.NotSerializableException: ru.yandex.practicum.filmorate.model.MPA
+Caused by: java.io.NotSerializableException: ru.yandex.practicum.filmorate.model.Mpa
 	at java.base/java.io.ObjectOutputStream.writeObject0(ObjectOutputStream.java:1185)
 	at java.base/java.io.ObjectOutputStream.writeObject(ObjectOutputStream.java:349)
 	at org.h2.util.JdbcUtils.serialize(JdbcUtils.java:388)
 	... 67 more
 2022-07-08 23:23:28 jdbc[3]: exception
-org.h2.jdbc.JdbcSQLDataException: Ошибка сериализации, причина: "java.io.NotSerializableException: ru.yandex.practicum.filmorate.model.MPA"
-Serialization failed, cause: "java.io.NotSerializableException: ru.yandex.practicum.filmorate.model.MPA" [90026-214]
+org.h2.jdbc.JdbcSQLDataException: Ошибка сериализации, причина: "java.io.NotSerializableException: ru.yandex.practicum.filmorate.model.Mpa"
+Serialization failed, cause: "java.io.NotSerializableException: ru.yandex.practicum.filmorate.model.Mpa" [90026-214]
 	at org.h2.message.DbException.getJdbcSQLException(DbException.java:646)
 	at org.h2.message.DbException.getJdbcSQLException(DbException.java:477)
 	at org.h2.message.DbException.get(DbException.java:212)
@@ -1137,7 +1137,7 @@ Serialization failed, cause: "java.io.NotSerializableException: ru.yandex.practi
 	at org.springframework.jdbc.core.JdbcTemplate.update(JdbcTemplate.java:960)
 	at org.springframework.jdbc.core.JdbcTemplate.update(JdbcTemplate.java:1015)
 	at org.springframework.jdbc.core.JdbcTemplate.update(JdbcTemplate.java:1025)
-	at ru.yandex.practicum.filmorate.storage.FilmDbStorage.update(FilmDbStorage.java:68)
+	at ru.yandex.practicum.filmorate.dao.FilmDbStorage.update(FilmDbStorage.java:68)
 	at ru.yandex.practicum.filmorate.service.FilmService.update(FilmService.java:36)
 	at ru.yandex.practicum.filmorate.controller.FilmController.update(FilmController.java:46)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
@@ -1190,7 +1190,7 @@ Serialization failed, cause: "java.io.NotSerializableException: ru.yandex.practi
 	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
 	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
 	at java.base/java.lang.Thread.run(Thread.java:829)
-Caused by: java.io.NotSerializableException: ru.yandex.practicum.filmorate.model.MPA
+Caused by: java.io.NotSerializableException: ru.yandex.practicum.filmorate.model.Mpa
 	at java.base/java.io.ObjectOutputStream.writeObject0(ObjectOutputStream.java:1185)
 	at java.base/java.io.ObjectOutputStream.writeObject(ObjectOutputStream.java:349)
 	at org.h2.util.JdbcUtils.serialize(JdbcUtils.java:388)
@@ -1252,8 +1252,8 @@ Column "USER_ID" not found [42122-214]
 	at org.h2.jdbc.JdbcResultSet.getColumnIndex(JdbcResultSet.java:3518)
 	at org.h2.jdbc.JdbcResultSet.getLong(JdbcResultSet.java:745)
 	at com.zaxxer.hikari.pool.HikariProxyResultSet.getLong(HikariProxyResultSet.java)
-	at ru.yandex.practicum.filmorate.storage.UserDbStorage.makeUser(UserDbStorage.java:135)
-	at ru.yandex.practicum.filmorate.storage.UserDbStorage.lambda$getUserFriends$3(UserDbStorage.java:91)
+	at ru.yandex.practicum.filmorate.dao.UserDbStorage.makeUser(UserDbStorage.java:135)
+	at ru.yandex.practicum.filmorate.dao.UserDbStorage.lambda$getUserFriends$3(UserDbStorage.java:91)
 	at org.springframework.jdbc.core.RowMapperResultSetExtractor.extractData(RowMapperResultSetExtractor.java:94)
 	at org.springframework.jdbc.core.RowMapperResultSetExtractor.extractData(RowMapperResultSetExtractor.java:61)
 	at org.springframework.jdbc.core.JdbcTemplate$1.doInPreparedStatement(JdbcTemplate.java:723)
@@ -1262,7 +1262,7 @@ Column "USER_ID" not found [42122-214]
 	at org.springframework.jdbc.core.JdbcTemplate.query(JdbcTemplate.java:744)
 	at org.springframework.jdbc.core.JdbcTemplate.query(JdbcTemplate.java:757)
 	at org.springframework.jdbc.core.JdbcTemplate.query(JdbcTemplate.java:815)
-	at ru.yandex.practicum.filmorate.storage.UserDbStorage.getUserFriends(UserDbStorage.java:91)
+	at ru.yandex.practicum.filmorate.dao.UserDbStorage.getUserFriends(UserDbStorage.java:91)
 	at ru.yandex.practicum.filmorate.service.UserService.getUserFriends(UserService.java:59)
 	at ru.yandex.practicum.filmorate.controller.UserController.findUserFriends(UserController.java:66)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
@@ -1325,8 +1325,8 @@ Column "USER_ID" not found [42122-214]
 	at org.h2.jdbc.JdbcResultSet.getColumnIndex(JdbcResultSet.java:3518)
 	at org.h2.jdbc.JdbcResultSet.getLong(JdbcResultSet.java:745)
 	at com.zaxxer.hikari.pool.HikariProxyResultSet.getLong(HikariProxyResultSet.java)
-	at ru.yandex.practicum.filmorate.storage.UserDbStorage.makeUser(UserDbStorage.java:135)
-	at ru.yandex.practicum.filmorate.storage.UserDbStorage.lambda$getUserFriends$3(UserDbStorage.java:91)
+	at ru.yandex.practicum.filmorate.dao.UserDbStorage.makeUser(UserDbStorage.java:135)
+	at ru.yandex.practicum.filmorate.dao.UserDbStorage.lambda$getUserFriends$3(UserDbStorage.java:91)
 	at org.springframework.jdbc.core.RowMapperResultSetExtractor.extractData(RowMapperResultSetExtractor.java:94)
 	at org.springframework.jdbc.core.RowMapperResultSetExtractor.extractData(RowMapperResultSetExtractor.java:61)
 	at org.springframework.jdbc.core.JdbcTemplate$1.doInPreparedStatement(JdbcTemplate.java:723)
@@ -1335,7 +1335,7 @@ Column "USER_ID" not found [42122-214]
 	at org.springframework.jdbc.core.JdbcTemplate.query(JdbcTemplate.java:744)
 	at org.springframework.jdbc.core.JdbcTemplate.query(JdbcTemplate.java:757)
 	at org.springframework.jdbc.core.JdbcTemplate.query(JdbcTemplate.java:815)
-	at ru.yandex.practicum.filmorate.storage.UserDbStorage.getUserFriends(UserDbStorage.java:91)
+	at ru.yandex.practicum.filmorate.dao.UserDbStorage.getUserFriends(UserDbStorage.java:91)
 	at ru.yandex.practicum.filmorate.service.UserService.getUserFriends(UserService.java:59)
 	at ru.yandex.practicum.filmorate.controller.UserController.findUserFriends(UserController.java:66)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
@@ -1389,8 +1389,8 @@ Column "USER_ID" not found [42122-214]
 	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
 	at java.base/java.lang.Thread.run(Thread.java:829)
 2022-07-08 23:31:57 jdbc[3]: exception
-org.h2.jdbc.JdbcSQLDataException: Ошибка сериализации, причина: "java.io.NotSerializableException: ru.yandex.practicum.filmorate.model.MPA"
-Serialization failed, cause: "java.io.NotSerializableException: ru.yandex.practicum.filmorate.model.MPA" [90026-214]
+org.h2.jdbc.JdbcSQLDataException: Ошибка сериализации, причина: "java.io.NotSerializableException: ru.yandex.practicum.filmorate.model.Mpa"
+Serialization failed, cause: "java.io.NotSerializableException: ru.yandex.practicum.filmorate.model.Mpa" [90026-214]
 	at org.h2.message.DbException.getJdbcSQLException(DbException.java:646)
 	at org.h2.message.DbException.getJdbcSQLException(DbException.java:477)
 	at org.h2.message.DbException.get(DbException.java:212)
@@ -1409,7 +1409,7 @@ Serialization failed, cause: "java.io.NotSerializableException: ru.yandex.practi
 	at org.springframework.jdbc.core.JdbcTemplate.update(JdbcTemplate.java:960)
 	at org.springframework.jdbc.core.JdbcTemplate.update(JdbcTemplate.java:1015)
 	at org.springframework.jdbc.core.JdbcTemplate.update(JdbcTemplate.java:1025)
-	at ru.yandex.practicum.filmorate.storage.FilmDbStorage.update(FilmDbStorage.java:68)
+	at ru.yandex.practicum.filmorate.dao.FilmDbStorage.update(FilmDbStorage.java:68)
 	at ru.yandex.practicum.filmorate.service.FilmService.update(FilmService.java:36)
 	at ru.yandex.practicum.filmorate.controller.FilmController.update(FilmController.java:46)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
@@ -1462,14 +1462,14 @@ Serialization failed, cause: "java.io.NotSerializableException: ru.yandex.practi
 	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
 	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
 	at java.base/java.lang.Thread.run(Thread.java:829)
-Caused by: java.io.NotSerializableException: ru.yandex.practicum.filmorate.model.MPA
+Caused by: java.io.NotSerializableException: ru.yandex.practicum.filmorate.model.Mpa
 	at java.base/java.io.ObjectOutputStream.writeObject0(ObjectOutputStream.java:1185)
 	at java.base/java.io.ObjectOutputStream.writeObject(ObjectOutputStream.java:349)
 	at org.h2.util.JdbcUtils.serialize(JdbcUtils.java:388)
 	... 67 more
 2022-07-08 23:31:59 jdbc[3]: exception
-org.h2.jdbc.JdbcSQLDataException: Ошибка сериализации, причина: "java.io.NotSerializableException: ru.yandex.practicum.filmorate.model.MPA"
-Serialization failed, cause: "java.io.NotSerializableException: ru.yandex.practicum.filmorate.model.MPA" [90026-214]
+org.h2.jdbc.JdbcSQLDataException: Ошибка сериализации, причина: "java.io.NotSerializableException: ru.yandex.practicum.filmorate.model.Mpa"
+Serialization failed, cause: "java.io.NotSerializableException: ru.yandex.practicum.filmorate.model.Mpa" [90026-214]
 	at org.h2.message.DbException.getJdbcSQLException(DbException.java:646)
 	at org.h2.message.DbException.getJdbcSQLException(DbException.java:477)
 	at org.h2.message.DbException.get(DbException.java:212)
@@ -1488,7 +1488,7 @@ Serialization failed, cause: "java.io.NotSerializableException: ru.yandex.practi
 	at org.springframework.jdbc.core.JdbcTemplate.update(JdbcTemplate.java:960)
 	at org.springframework.jdbc.core.JdbcTemplate.update(JdbcTemplate.java:1015)
 	at org.springframework.jdbc.core.JdbcTemplate.update(JdbcTemplate.java:1025)
-	at ru.yandex.practicum.filmorate.storage.FilmDbStorage.update(FilmDbStorage.java:68)
+	at ru.yandex.practicum.filmorate.dao.FilmDbStorage.update(FilmDbStorage.java:68)
 	at ru.yandex.practicum.filmorate.service.FilmService.update(FilmService.java:36)
 	at ru.yandex.practicum.filmorate.controller.FilmController.update(FilmController.java:46)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
@@ -1541,14 +1541,14 @@ Serialization failed, cause: "java.io.NotSerializableException: ru.yandex.practi
 	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
 	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
 	at java.base/java.lang.Thread.run(Thread.java:829)
-Caused by: java.io.NotSerializableException: ru.yandex.practicum.filmorate.model.MPA
+Caused by: java.io.NotSerializableException: ru.yandex.practicum.filmorate.model.Mpa
 	at java.base/java.io.ObjectOutputStream.writeObject0(ObjectOutputStream.java:1185)
 	at java.base/java.io.ObjectOutputStream.writeObject(ObjectOutputStream.java:349)
 	at org.h2.util.JdbcUtils.serialize(JdbcUtils.java:388)
 	... 67 more
 2022-07-08 23:35:10 jdbc[3]: exception
-org.h2.jdbc.JdbcSQLDataException: Ошибка сериализации, причина: "java.io.NotSerializableException: ru.yandex.practicum.filmorate.model.MPA"
-Serialization failed, cause: "java.io.NotSerializableException: ru.yandex.practicum.filmorate.model.MPA" [90026-214]
+org.h2.jdbc.JdbcSQLDataException: Ошибка сериализации, причина: "java.io.NotSerializableException: ru.yandex.practicum.filmorate.model.Mpa"
+Serialization failed, cause: "java.io.NotSerializableException: ru.yandex.practicum.filmorate.model.Mpa" [90026-214]
 	at org.h2.message.DbException.getJdbcSQLException(DbException.java:646)
 	at org.h2.message.DbException.getJdbcSQLException(DbException.java:477)
 	at org.h2.message.DbException.get(DbException.java:212)
@@ -1567,7 +1567,7 @@ Serialization failed, cause: "java.io.NotSerializableException: ru.yandex.practi
 	at org.springframework.jdbc.core.JdbcTemplate.update(JdbcTemplate.java:960)
 	at org.springframework.jdbc.core.JdbcTemplate.update(JdbcTemplate.java:1015)
 	at org.springframework.jdbc.core.JdbcTemplate.update(JdbcTemplate.java:1025)
-	at ru.yandex.practicum.filmorate.storage.FilmDbStorage.update(FilmDbStorage.java:68)
+	at ru.yandex.practicum.filmorate.dao.FilmDbStorage.update(FilmDbStorage.java:68)
 	at ru.yandex.practicum.filmorate.service.FilmService.update(FilmService.java:36)
 	at ru.yandex.practicum.filmorate.controller.FilmController.update(FilmController.java:46)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
@@ -1620,7 +1620,7 @@ Serialization failed, cause: "java.io.NotSerializableException: ru.yandex.practi
 	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
 	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
 	at java.base/java.lang.Thread.run(Thread.java:829)
-Caused by: java.io.NotSerializableException: ru.yandex.practicum.filmorate.model.MPA
+Caused by: java.io.NotSerializableException: ru.yandex.practicum.filmorate.model.Mpa
 	at java.base/java.io.ObjectOutputStream.writeObject0(ObjectOutputStream.java:1185)
 	at java.base/java.io.ObjectOutputStream.writeObject(ObjectOutputStream.java:349)
 	at org.h2.util.JdbcUtils.serialize(JdbcUtils.java:388)

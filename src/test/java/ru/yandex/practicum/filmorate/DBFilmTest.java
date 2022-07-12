@@ -9,8 +9,8 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.annotation.DirtiesContext;
 import ru.yandex.practicum.filmorate.model.Film;
 import ru.yandex.practicum.filmorate.model.Genre;
-import ru.yandex.practicum.filmorate.model.MPA;
-import ru.yandex.practicum.filmorate.storage.FilmDbStorage;
+import ru.yandex.practicum.filmorate.model.Mpa;
+import ru.yandex.practicum.filmorate.dao.FilmDbStorage;
 
 import java.time.LocalDate;
 import java.time.Month;
@@ -27,14 +27,14 @@ public class DBFilmTest {
 
     private final FilmDbStorage filmStorage;
 
-    private MPA mpa;
+    private Mpa mpa;
     private Set<Genre> genre;
     private Film film;
 
 
     @BeforeEach
     public void createFilm() {
-        mpa = new MPA(2, "PG");
+        mpa = new Mpa(2, "PG");
         genre = new HashSet<>();
         genre.add(new Genre(1, "Комедия"));
         film = new Film();

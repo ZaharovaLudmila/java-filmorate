@@ -4,9 +4,7 @@ import lombok.*;
 
 import javax.validation.constraints.Size;
 
-@Setter
-@Getter
-@EqualsAndHashCode
+@Data
 @AllArgsConstructor
 @NoArgsConstructor
 public class Genre {

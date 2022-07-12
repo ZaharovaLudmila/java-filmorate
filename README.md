@@ -40,18 +40,11 @@ WHERE fl.id = ?искомый_ID
 
 #### Запрос на получение популярных фильмов:
 
-SELECT<br/>
-    l.film_id AS filmID, <br/>
-    f.name AS name, <br/>
-    f.description AS description, <br/>
-    f.releaseDate AS releaseDate, <br/>
-    f.duration AS duration, <br/>
-    f.MPA_id AS MPA_id, <br/>
-    COUNT(DISTINCT l.user_id) <br/>
-FROM likes AS l <br/>
-LEFT OUTER JOIN films AS f ON l.film_id = f.id <br/>
-GROUP BY l.film_id <br/>
-ORDER BY COUNT(l.user_id) DESC <br/>
+SELECT f* <br/>
+FROM FILMS AS f <br/>
+LEFT OUTER JOIN LIKES AS l ON f.id = l.film_id <br/>
+GROUP BY f.id <br/>
+ORDER BY COUNT(l.user_id) DESC  <br/>
 LIMIT ?количество, выводимое на экран
 
 

@@ -8,8 +8,8 @@ import org.springframework.boot.test.autoconfigure.jdbc.AutoConfigureTestDatabas
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.annotation.DirtiesContext;
 import ru.yandex.practicum.filmorate.model.User;
-import ru.yandex.practicum.filmorate.storage.intrf.FriendsStorage;
-import ru.yandex.practicum.filmorate.storage.intrf.UserStorage;
+import ru.yandex.practicum.filmorate.dao.daoInterface.FriendsStorage;
+import ru.yandex.practicum.filmorate.dao.daoInterface.UserStorage;
 
 import java.time.LocalDate;
 import java.util.ArrayList;

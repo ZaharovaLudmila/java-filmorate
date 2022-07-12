@@ -1,4 +1,4 @@
-package ru.yandex.practicum.filmorate.storage;
+package ru.yandex.practicum.filmorate.dao;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -6,10 +6,9 @@ import org.springframework.context.annotation.Primary;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.support.GeneratedKeyHolder;
 import org.springframework.jdbc.support.KeyHolder;
-import org.springframework.jdbc.support.rowset.SqlRowSet;
 import org.springframework.stereotype.Component;
 import ru.yandex.practicum.filmorate.model.User;
-import ru.yandex.practicum.filmorate.storage.intrf.UserStorage;
+import ru.yandex.practicum.filmorate.dao.daoInterface.UserStorage;
 
 import java.sql.Date;
 import java.sql.PreparedStatement;
@@ -18,7 +17,7 @@ import java.sql.SQLException;
 import java.time.LocalDate;
 import java.util.*;
 
-@Component("UserDbStorage")
+@Component()
 @Primary
 public class UserDbStorage implements UserStorage {
 

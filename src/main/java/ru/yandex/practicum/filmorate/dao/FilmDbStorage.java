@@ -1,4 +1,4 @@
-package ru.yandex.practicum.filmorate.storage;
+package ru.yandex.practicum.filmorate.dao;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -10,30 +10,29 @@ import org.springframework.jdbc.support.KeyHolder;
 import org.springframework.stereotype.Component;
 import ru.yandex.practicum.filmorate.model.Film;
 import ru.yandex.practicum.filmorate.model.Genre;
-import ru.yandex.practicum.filmorate.model.MPA;
-import ru.yandex.practicum.filmorate.storage.intrf.FilmStorage;
+import ru.yandex.practicum.filmorate.model.Mpa;
+import ru.yandex.practicum.filmorate.dao.daoInterface.FilmStorage;
 
 import java.sql.Date;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.time.LocalDate;
-import java.util.Comparator;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Optional;
 
-@Component("FilmDbStorage")
+@Component()
 @Primary
 public class FilmDbStorage implements FilmStorage {
 
     private final JdbcTemplate jdbcTemplate;
     private final Logger log = LoggerFactory.getLogger(UserDbStorage.class);
-    private final  MPADao mpaDao;
+    private final MpaDao mpaDao;
     private final GenreDao genreDao;
 
     @Autowired
-    public FilmDbStorage(JdbcTemplate jdbcTemplate, MPADao mpaDao, GenreDao genreDao) {
+    public FilmDbStorage(JdbcTemplate jdbcTemplate, MpaDao mpaDao, GenreDao genreDao) {
         this.jdbcTemplate = jdbcTemplate;
         this.mpaDao = mpaDao;
         this.genreDao = genreDao;
@@ -148,7 +147,7 @@ public class FilmDbStorage implements FilmStorage {
         String description = rs.getString("DESCRIPTION");
         Date releaseDate = rs.getDate("RELEASE_DATE");
         int duration = rs.getInt("DURATION");
-        MPA mpa = mpaDao.getMPAByID(rs.getInt("MPA_ID")).get();
+        Mpa mpa = mpaDao.getMPAByID(rs.getInt("MPA_ID")).get();
         LocalDate filmRelease = null;
         if (releaseDate != null) {
             filmRelease = releaseDate.toLocalDate();

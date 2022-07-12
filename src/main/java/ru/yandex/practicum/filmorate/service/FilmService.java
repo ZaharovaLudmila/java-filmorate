@@ -5,11 +5,9 @@ import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
 import ru.yandex.practicum.filmorate.exception.UserNotFoundException;
 import ru.yandex.practicum.filmorate.model.Film;
-import ru.yandex.practicum.filmorate.storage.LikesDao;
-import ru.yandex.practicum.filmorate.storage.intrf.FilmStorage;
-import ru.yandex.practicum.filmorate.storage.intrf.LikesStorage;
+import ru.yandex.practicum.filmorate.dao.daoInterface.FilmStorage;
+import ru.yandex.practicum.filmorate.dao.daoInterface.LikesStorage;
 
-import java.util.ArrayList;
 import java.util.List;
 
 @Service

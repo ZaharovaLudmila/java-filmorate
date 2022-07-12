@@ -1,4 +1,4 @@
-package ru.yandex.practicum.filmorate.storage.intrf;
+package ru.yandex.practicum.filmorate.dao.daoInterface;
 
 public interface FriendsStorage {
 
