@@ -1,24 +1,26 @@
 package ru.yandex.practicum.filmorate.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
+import ru.yandex.practicum.filmorate.exception.UserNotFoundException;
 import ru.yandex.practicum.filmorate.model.User;
-import ru.yandex.practicum.filmorate.storage.InMemoryUserStorage;
-import ru.yandex.practicum.filmorate.storage.UserStorage;
+import ru.yandex.practicum.filmorate.dao.daoInterface.FriendsStorage;
+import ru.yandex.practicum.filmorate.dao.daoInterface.UserStorage;
 
-import java.util.ArrayList;
 import java.util.List;
-import java.util.Set;
-import java.util.stream.Collectors;
 
 @Service
 public class UserService {
 
+    @Qualifier("UserDbStorage")
     UserStorage userStorage;
+    FriendsStorage friendsStorage;
 
     @Autowired
-    public UserService(InMemoryUserStorage userStorage) {
+    public UserService(UserStorage userStorage, FriendsStorage friendsStorage) {
         this.userStorage = userStorage;
+        this.friendsStorage = friendsStorage;
     }
 
     public List<User> findAll() {
@@ -27,43 +29,36 @@ public class UserService {
 
     public User create(User user) {
         Validator.userValid(user);
-        return userStorage.create(user);
+        return userStorage.create(user).get();
     }
 
     public User update(User user) {
         Validator.userValid(user);
-        return userStorage.update(user);
+        getUserById(user.getId());
+        return userStorage.update(user).get();
     }
 
     public void addFriend(long userId, long friendId) {
-        User user = userStorage.getUserByID(userId);
-        User friend = userStorage.getUserByID(friendId);
-        user.getFriends().add(friendId);
-        friend.getFriends().add(userId);
+        getUserById(userId);
+        getUserById(friendId);
+        friendsStorage.addFriend(userId, friendId);
     }
 
     public void deleteFriend(long userId, long friendId) {
-        User user = userStorage.getUserByID(userId);
-        User friend = userStorage.getUserByID(friendId);
-        user.getFriends().remove(friendId);
-        friend.getFriends().remove(userId);
+        friendsStorage.deleteFriend(userId, friendId);
     }
 
     public List<User> commonFriends(long userId, long friendId) {
-        User user = userStorage.getUserByID(userId);
-        User friend = userStorage.getUserByID(friendId);
-        ArrayList<Long> userFriends = new ArrayList<>(user.getFriends());
-        ArrayList<Long> friendFriends = new ArrayList<>(friend.getFriends());
-        userFriends.retainAll(friendFriends);
-        return userFriends.stream().map(id -> userStorage.getUserByID(id)).collect(Collectors.toList());
+        return userStorage.commonFriends(userId, friendId);
     }
 
     public User getUserById(long id) {
-        return userStorage.getUserByID(id);
+
+        return userStorage.getUserByID(id).orElseThrow(()-> new UserNotFoundException("Пользователь с " +
+                id + " не найден."));
     }
 
     public List<User> getUserFriends(long userId) {
-        List<Long> friendsList = new ArrayList<>(userStorage.getUserByID(userId).getFriends());
-        return friendsList.stream().map(id -> userStorage.getUserByID(id)).collect(Collectors.toList());
+       return userStorage.getUserFriends(userId);
     }
 }
