@@ -40,12 +40,11 @@ WHERE fl.id = ?искомый_ID
 
 #### Запрос на получение популярных фильмов:
 
-SELECT f* <br/>
+SELECT<br/>
+    f* <br/>
+
 FROM FILMS AS f <br/>
 LEFT OUTER JOIN LIKES AS l ON f.id = l.film_id <br/>
 GROUP BY f.id <br/>
 ORDER BY COUNT(l.user_id) DESC  <br/>
 LIMIT ?количество, выводимое на экран
-
-
-
